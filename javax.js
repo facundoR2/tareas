@@ -17,19 +17,20 @@ function mostrartarea(){
         muestra_estado.innerHTML="";
         bton_borrar.innerHTML ="";
         let tabla = document.getElementById("tabla");
-        for (let i = 0; i < data.length; i++) {
+        let index =0;
+        for (let i = 0; i < data.length *Object.keys(data[0]).length; i++) {
             let fila = document.createElement("tr");
-            for (let key in data[i]){
-                //crear celda
-                let celda =document.createElement("td");
-                //agregar valor a la celda
-                celda.textContent=data[i][key];
+            let celda =document.createElement("td");
+                celda.textContent=data[Math.floor(index/Object.keys(data[0]).length)][Object.keys(data[0])[index % Object.keys(data[0]).length]];
+                //agregar celda a la fila
                 fila.appendChild(celda);
+                //agregar fila a la tabla.
                 tabla.appendChild(celda);
+                index++;
             }
             
         }       
-    });
+    );
 }
 // creamos los listeners
 
