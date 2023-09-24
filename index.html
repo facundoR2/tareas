@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agendatareas</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <input type="button" value="refresh tareas" onclick="mostrartarea()">
+    <div id="seccion-tareas">
+        <table id="tabla" style="border: 1px solid black;">
+            <tr>
+                <th>tareas</th>
+                <th>estados</th>
+                <th>borrar</th>
+            </tr>
+            <tr style="border: 1px solid black;">
+                <td><div id="TareasRecibidas"></div></td>
+                <td><div id="EstadosRecibidos"></div></td>
+                <td><div id="botonborrar"></div></td>
+            </tr>
+                
+                
+    </table>
+        
+    </div>
+    
+    <form id="agenda" method="post" action="serviciobackend.php" accept-charset="UTF-8" >
+        <ul>
+            <li><label for="texto">tarea</label></li>
+            <li><input type="text" name="texto" id="texto"></li>
+            <li><label for="estado">estado de la tarea</label></li>
+            <li><input name="estado" type="text" id="estado"></li>
+            <li><button type="submit">enviar datos</button></li>
+        </ul>    
+    </form>
+    <div id="tareadb">
+        <h1>tareas registradas</h1>
+
+    </div>
+    <script src="javax.js"></script>
+</body>
+</html>
